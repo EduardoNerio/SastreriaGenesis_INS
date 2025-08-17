@@ -4,81 +4,137 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Arreglos - Sastrería Génesis</title>
-  <link rel="stylesheet" href="css/style.css">
+  <title>Registro de Pedidos</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
   <header>
     <nav class="navbar">
       <h1 class="logo">Sastrería Génesis</h1>
       <ul class="menu">
-        <li><a href="index.html">Inicio</a></li>
+        <li><a href="index.html" class="active">Inicio</a></li>
         <li><a href="productos.html">Productos</a></li>
         <li><a href="contacto.html">Contacto</a></li>
-        <li><a href="pedidos.html" class="active">Pedidos</a></li>
+        <li><a href="pedidos.html">Pedidos</a></li>
       </ul>
     </nav>
   </header>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f6f9;
+      margin: 0;
+      padding: 0;
+    }
 
+    .arreglos {
+      padding: 3rem 2rem;
+      text-align: center;
+    }
+
+    .arreglos h2 {
+      margin-bottom: 2rem;
+      color: #16213e;
+    }
+
+    .formulario {
+      max-width: 800px;
+      margin: 0 auto;
+      background: #fff;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      text-align: left;
+    }
+
+    .formulario label {
+      display: block;
+      font-weight: bold;
+      margin-top: 1rem;
+      color: #16213e;
+    }
+
+    .formulario input, 
+    .formulario select, 
+    .formulario textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      font-size: 1rem;
+    }
+
+    .formulario textarea {
+      resize: vertical;
+      min-height: 80px;
+    }
+
+    .formulario button {
+      margin-top: 2rem;
+      background-color: #16213e;
+      color: #fff;
+      border: none;
+      padding: 12px 20px;
+      font-size: 1rem;
+      border-radius: 5px;
+      cursor: pointer;
+      width: 100%;
+    }
+
+    .formulario button:hover {
+      background-color: #1f2e5a;
+    }
+  </style>
+</head>
+<body>
   <section class="arreglos">
-    <h2>Registrar Pedidos</h2>
-    <form id="form-arreglo" class="formulario">
-      <input type="text" id="nombre" placeholder="Nombre del cliente" required>
-      <input type="number" id="largo" placeholder="Largo (cm)" required>
-      <input type="number" id="ancho" placeholder="Ancho (cm)" required>
-      <input type="date" id="fecha" required>
-      <button type="submit" class="btn">Registrar</button>
+    <h2>Registro de Pedido</h2>
+    <form class="formulario">
+      <label for="titulo">Título del Pedido</label>
+      <input type="text" id="titulo" name="titulo" required>
+
+      <label for="clase">Clase de Prenda</label>
+      <input type="text" id="clase" name="clase" required>
+
+      <label for="medidas">Medidas Tomadas</label>
+      <textarea id="medidas" name="medidas" required></textarea>
+
+      <label for="tipo">Tipo de Pedido</label>
+      <select id="tipo" name="tipo" required>
+        <option value="">Seleccione...</option>
+        <option value="arreglo">Arreglo</option>
+        <option value="confeccion">Confección desde cero</option>
+      </select>
+
+      <label for="estilo">Estilo de Prenda</label>
+      <select id="estilo" name="estilo" required>
+        <option value="">Seleccione...</option>
+        <option value="deportiva">Deportiva</option>
+        <option value="uniforme">Uniforme</option>
+        <option value="casual">Casual</option>
+        <option value="formal">Formal</option>
+        <option value="hogar">Hogar</option>
+        <option value="infantil">Infantil</option>
+      </select>
+
+      <label for="modelo">Prenda o Modelo Proporcionado</label>
+      <input type="text" id="modelo" name="modelo">
+
+      <label for="cliente">Nombre del Cliente</label>
+      <input type="text" id="cliente" name="cliente" required>
+
+      <label for="telefono">Teléfono</label>
+      <input type="tel" id="telefono" name="telefono" required>
+
+      <label for="recepcion">Fecha de Recepción</label>
+      <input type="date" id="recepcion" name="recepcion" required>
+
+      <label for="entrega">Fecha de Entrega</label>
+      <input type="date" id="entrega" name="entrega" required>
+
+      <button type="submit">Registrar Pedido</button>
     </form>
-
-    <h3>Listado de Arreglos</h3>
-    <table class="tabla">
-      <thead>
-        <tr>
-          <th>Cliente</th>
-          <th>Largo (cm)</th>
-          <th>Ancho (cm)</th>
-          <th>Fecha Entrega</th>
-        </tr>
-      </thead>
-      <tbody id="lista-arreglos">
-        <!-- Aquí se mostrarán los arreglos -->
-      </tbody>
-    </table>
   </section>
-
-  <footer>
-    <p>© 2025 Sastrería Génesis | Todos los derechos reservados</p>
-  </footer>
-
-  <script>
-    // Capturar formulario
-    const form = document.getElementById("form-arreglo");
-    const lista = document.getElementById("lista-arreglos");
-
-    form.addEventListener("submit", function(e) {
-      e.preventDefault();
-
-      // Obtener valores
-      const nombre = document.getElementById("nombre").value;
-      const largo = document.getElementById("largo").value;
-      const ancho = document.getElementById("ancho").value;
-      const fecha = document.getElementById("fecha").value;
-
-      // Crear fila
-      const fila = document.createElement("tr");
-      fila.innerHTML = `
-        <td>${nombre}</td>
-        <td>${largo}</td>
-        <td>${ancho}</td>
-        <td>${fecha}</td>
-      `;
-
-      // Agregar fila a la tabla
-      lista.appendChild(fila);
-
-      // Limpiar formulario
-      form.reset();
-    });
-  </script>
 </body>
 </html>
