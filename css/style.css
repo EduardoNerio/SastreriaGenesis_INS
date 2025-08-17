@@ -1,0 +1,216 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, sans-serif;
+  line-height: 1.6;
+  background: #f4f4f9;
+  color: #333;
+}
+
+/* Header */
+header {
+  background: #1a1a2e;
+  color: #fff;
+  padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.5rem;
+  color: #e94560;
+}
+
+.menu {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.menu a {
+  text-decoration: none;
+  color: #fff;
+  transition: 0.3s;
+}
+
+.menu a:hover,
+.menu a.active {
+  color: #e94560;
+}
+
+/* Hero section */
+.hero {
+  text-align: center;
+  padding: 5rem 2rem;
+  background: linear-gradient(to right, #16213e, #0f3460);
+  color: #fff;
+}
+
+.hero h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  background: #e94560;
+  color: #fff;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.btn:hover {
+  background: #ff6f91;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 1rem;
+  background: #1a1a2e;
+  color: #fff;
+  margin-top: 2rem;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .menu {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+}
+.productos {
+  padding: 3rem 2rem;
+  text-align: center;
+}
+
+.productos h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #16213e;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.card {
+  background: #fff;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.card h3 {
+  margin: 1rem 0 0.5rem;
+}
+
+.card p {
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+
+.precio {
+  font-weight: bold;
+  color: #e94560;
+  display: block;
+  margin-bottom: 0.8rem;
+}
+
+/* Contacto */
+.contacto {
+  padding: 3rem 2rem;
+  text-align: center;
+}
+
+.contacto h2 {
+  margin-bottom: 1.5rem;
+  color: #16213e;
+}
+
+.formulario {
+  max-width: 500px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.formulario input,
+.formulario textarea {
+  padding: 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.formulario textarea {
+  min-height: 120px;
+  resize: none;
+}
+
+.formulario button {
+  border: none;
+  cursor: pointer;
+}
+.arreglos {
+  padding: 3rem 2rem;
+  text-align: center;
+}
+
+.arreglos h2 {
+  margin-bottom: 1rem;
+  color: #16213e;
+}
+
+.tabla {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 2rem;
+}
+
+.tabla th, .tabla td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: center;
+}
+
+.tabla th {
+  background-color: #16213e;
+  color: #fff;
+}
+
+.tabla tr:nth-child(even) {
+  background-color: #f9f9f9;
+}

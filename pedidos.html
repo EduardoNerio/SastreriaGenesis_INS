@@ -1,0 +1,84 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arreglos - Sastrería Génesis</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <h1 class="logo">Sastrería Génesis</h1>
+      <ul class="menu">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="productos.html">Productos</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+        <li><a href="pedidos.html" class="active">Pedidos</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="arreglos">
+    <h2>Registrar Pedidos</h2>
+    <form id="form-arreglo" class="formulario">
+      <input type="text" id="nombre" placeholder="Nombre del cliente" required>
+      <input type="number" id="largo" placeholder="Largo (cm)" required>
+      <input type="number" id="ancho" placeholder="Ancho (cm)" required>
+      <input type="date" id="fecha" required>
+      <button type="submit" class="btn">Registrar</button>
+    </form>
+
+    <h3>Listado de Arreglos</h3>
+    <table class="tabla">
+      <thead>
+        <tr>
+          <th>Cliente</th>
+          <th>Largo (cm)</th>
+          <th>Ancho (cm)</th>
+          <th>Fecha Entrega</th>
+        </tr>
+      </thead>
+      <tbody id="lista-arreglos">
+        <!-- Aquí se mostrarán los arreglos -->
+      </tbody>
+    </table>
+  </section>
+
+  <footer>
+    <p>© 2025 Sastrería Génesis | Todos los derechos reservados</p>
+  </footer>
+
+  <script>
+    // Capturar formulario
+    const form = document.getElementById("form-arreglo");
+    const lista = document.getElementById("lista-arreglos");
+
+    form.addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      // Obtener valores
+      const nombre = document.getElementById("nombre").value;
+      const largo = document.getElementById("largo").value;
+      const ancho = document.getElementById("ancho").value;
+      const fecha = document.getElementById("fecha").value;
+
+      // Crear fila
+      const fila = document.createElement("tr");
+      fila.innerHTML = `
+        <td>${nombre}</td>
+        <td>${largo}</td>
+        <td>${ancho}</td>
+        <td>${fecha}</td>
+      `;
+
+      // Agregar fila a la tabla
+      lista.appendChild(fila);
+
+      // Limpiar formulario
+      form.reset();
+    });
+  </script>
+</body>
+</html>
