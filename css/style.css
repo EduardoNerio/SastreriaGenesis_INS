@@ -76,6 +76,7 @@ header {
   border-radius: 5px;
   text-decoration: none;
   transition: background 0.3s;
+  font-weight: bold;
 }
 
 .btn:hover {
@@ -97,16 +98,6 @@ footer {
     flex-direction: column;
     gap: 0.8rem;
   }
-}
-.productos {
-  padding: 3rem 2rem;
-  text-align: center;
-}
-
-.productos h2 {
-  font-size: 2rem;
-  margin-bottom: 2rem;
-  color: #16213e;
 }
 
 .grid {
