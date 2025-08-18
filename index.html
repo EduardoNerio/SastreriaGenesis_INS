@@ -6,6 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sastrería Génesis</title>
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/List_style.css">
+  <script src="js/List_functions.js"></script>
 </head>
 <body>
   <header>
@@ -13,7 +15,6 @@
       <h1 class="logo">Sastrería Génesis</h1>
       <ul class="menu">
         <li><a href="index.html" class="active">Inicio</a></li>
-        <li><a href="productos.html">Productos</a></li>
         <li><a href="contacto.html">Contacto</a></li>
         <li><a href="pedidos.html">Pedidos</a></li>
       </ul>
@@ -21,9 +22,115 @@
   </header>
 
   <section class="hero">
-    <h2>Elegancia a tu medida</h2>
-    <p>Trajes, camisas y accesorios hechos con la mejor calidad y detalle.</p>
-    <a href="productos.html" class="btn">Ver productos</a>
+    <h2>Pedidos Registrados</h2>
+    <p>Informe de los pedidos activos y completados. </p>
+    <a href="pedidos.html" class="btn">Registrar Pedido</a>
+  </section>
+
+  <section class="registros">
+    <div class="tab">
+      <button class="tablinks" onclick="openTab(event, 'Activos')">Pedidos Activos</button>
+      <button class="tablinks" onclick="openTab(event, 'Completados')">Pedidos Completados</button>
+    </div>
+
+    <div id="Activos" class="tabcontent">
+      <h2>Pedidos Activos</h2>
+      
+      <div class="bloque">
+        <table class="dato_registrado">
+          <tr>  
+            <td rowspan="5" class="num_dato"># <br> 1</td>
+            <td class="tipoprenda_dato">Pantalon</td>
+            <td colspan="2" class="titulo_dato">Pantalon Hombre - Formal</td>
+          </tr>
+          <tr> 
+            <td rowspan="4" class="imagen_dato">Imagen Pantalon</td>
+            <td colspan="2" class="medida_dato">Largo: 102cm, Ancho: 106cm, Cintura: 97cm, Largo de Tiro: 25cm</td>
+          </tr>
+          <tr> 
+            <td class="tipopedido_dato">Confección desde zero</td>
+            <td class="nombrecliente_dato">Rodrigo Antonio Gutierrez Torres</td>
+          </tr>
+          <tr> 
+            <td class="fechaentrega_dato">Miercoles 27 de agosto de 2025 </td>
+            <td class="opciones_dato"> <button class="btn_acciones"> Acciones </button></td>
+          </tr>
+        </table>
+      </div>
+
+       <div class="bloque">
+        <table class="dato_registrado">
+          <tr>  
+            <td rowspan="5" class="num_dato"># <br> 2</td>
+            <td class="tipoprenda_dato">Camisa </td>
+            <td colspan="2" class="titulo_dato">Camisa Mujer - Casual</td>
+          </tr>
+          <tr> 
+            <td rowspan="4" class="imagen_dato">Imagen Camisa</td>
+            <td colspan="2" class="medida_dato">Daños en el cuello y botones rotos.</td>
+          </tr>
+          <tr> 
+            <td class="tipopedido_dato">Arreglo</td>
+            <td class="nombrecliente_dato">Maria Cruz Campos Flores</td>
+          </tr>
+          <tr> 
+            <td class="fechaentrega_dato">Jueves 28 de agosto de 2025 </td>
+            <td class="opciones_dato"> <button class="btn_acciones"> Acciones </button></td>
+          </tr>
+        </table>
+      </div>
+
+      <div class="bloque">
+        <table class="dato_registrado">
+          <tr>  
+            <td rowspan="5" class="num_dato"># <br> 3</td>
+            <td class="tipoprenda_dato">Tapete</td>
+            <td colspan="2" class="titulo_dato">Covertor de mesa grande - Hogar</td>
+          </tr>
+          <tr> 
+            <td rowspan="4" class="imagen_dato">Imagen Mesa</td>
+            <td colspan="2" class="medida_dato">Mesa grande cuadrada, Largo: 125cm, Acho: 125cm</td>
+          </tr>
+          <tr> 
+            <td class="tipopedido_dato">Confección desde zero</td>
+            <td class="nombrecliente_dato"> Edith Francisca Castillos Castillos</td>
+          </tr>
+          <tr> 
+            <td class="fechaentrega_dato">Viernes 29 de agosto de 2025 </td>
+            <td class="opciones_dato"> <button class="btn_acciones"> Acciones </button></td>
+          </tr>
+        </table>
+      </div>
+
+
+    </div>
+
+    <div id="Completados" class="tabcontent">
+      <h2>Pedidos Completados</h2>
+      
+      <div class="bloque">
+        <table class="dato_registrado">
+          <tr>  
+            <td rowspan="5" class="num_dato"># <br> 1</td>
+            <td class="tipoprenda_dato">Vestido</td>
+            <td colspan="2" class="titulo_dato">Vestido de 15 años - Formal</td>
+          </tr>
+          <tr> 
+            <td rowspan="4" class="imagen_dato">Imagen de vestido</td>
+            <td colspan="2" class="medida_dato">Talle: 40cm, Busto: 102cm, Cintura: 89cm, Largo: 150cm, Contorno de Manga: 28cm</td>
+          </tr>
+          <tr> 
+            <td class="tipopedido_dato">Confección desde zero</td>
+            <td class="nombrecliente_dato">Sandra Antonia Ruiz Gutierrez</td>
+          </tr>
+          <tr> 
+            <td class="fechaentrega_dato">Lunes 11 de agosto de 2025 </td>
+            <td class="estado_dato"> Pedido Entregado</td>
+          </tr>
+        </table>
+      </div>
+
+    </div>
   </section>
 
   <footer>
